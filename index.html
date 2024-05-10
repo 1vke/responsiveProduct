@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="main.js" defer></script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap" rel="stylesheet">
     <title>Responsive product</title>
@@ -13,28 +14,62 @@
 <body>
     <div class="product">
         <div class="image-carousel">
+            <img src="images/1.png" alt="" class="image">
             <img src="images/2.png" alt="" class="image">
+            <img src="images/3.png" alt="" class="image">
+            <img src="images/4.png" alt="" class="image">
+            <img src="images/5.png" alt="" class="image">
         </div>
         <div class="product-details">
             <div class="details">
-                <h1 class="title">Wmns Dunk Low Prm</h1>
+                <h1 class="title">Nike Wmns Dunk Low Prm</h1>
                 <p class="price">$120.00</p>
             </div>
             <div class="variant-selection">
-                <div class="option-selection">
-                    <h3 class="header">SIZE: 7M</h3>
+                <fieldset class="option-selection">
+                    <h3 class="header">Size: 7</h3>
                     <div class="option-container">
                         <div class="option-value">
                             <label class="option-value-label">
-                                <input type="radio" name="SIZE" value="7M" aria-label="7M">
-                                <span class="option-value-name">7M</span>
+                                <input tabindex="0" type="radio" name="SIZE" value="7" aria-label="7">
+                                <span tabindex="-1" class="option-value-name">7</span>
+                            </label>
+                        </div>
+                        <div class="option-value">
+                            <label class="option-value-label">
+                                <input tabindex="0" type="radio" name="SIZE" value="8" aria-label="8">
+                                <span tabindex="-1" class="option-value-name">8</span>
+                            </label>
+                        </div>
+                        <div class="option-value">
+                            <label class="option-value-label">
+                                <input tabindex="0" type="radio" name="SIZE" value="9" aria-label="9">
+                                <span tabindex="-1" class="option-value-name">9</span>
+                            </label>
+                        </div>
+                        <div class="option-value">
+                            <label class="option-value-label">
+                                <input tabindex="0" type="radio" name="SIZE" value="10" aria-label="10">
+                                <span tabindex="-1" class="option-value-name">10</span>
+                            </label>
+                        </div>
+                        <div class="option-value">
+                            <label class="option-value-label">
+                                <input tabindex="0" type="radio" name="SIZE" value="11" aria-label="11">
+                                <span tabindex="-1" class="option-value-name">11</span>
+                            </label>
+                        </div>
+                        <div class="option-value">
+                            <label class="option-value-label">
+                                <input tabindex="0" type="radio" name="SIZE" value="12" aria-label="12">
+                                <span tabindex="-1" class="option-value-name">12</span>
                             </label>
                         </div>
                     </div>
-                </div>
+                </fieldset>
             </div>
-            <button class="button add-to-cart"><span class="text">Add to cart</span></button>
-            <button class="button buy-it-now"><span class="text">Buy it now</span></button>
+            <button class="btn add-to-cart"><span class="text">Add to cart</span></button>
+            <button class="btn buy-it-now"><span class="text">Buy it now</span></button>
         </div>
     </div>
 </body>
