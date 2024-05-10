@@ -1,0 +1,49 @@
+body {
+    height: 100vh;
+    background-color: #121212;
+    place-content:center;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    height: 32.5em;
+    width: 50em;
+    padding: 2em;
+    margin: 0 auto;
+    border-radius: 1.5em;
+    background-color: white;
+}
+
+.image-carousel {
+    height: 100%;
+    width: 100%;
+}
+
+.image-carousel .image {
+    width: 100%;
+    height: 100%;
+    border-radius: .75em;
+    object-fit: cover;
+}
+
+.product-details {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.details {
+    margin-bottom: 2.5em;
+}
+.details .title {
+    font-family: "Arapey", serif;
+    font-size: 2.25em;
+    color: #1b1b1b;
+}
+.details .price {
+    font-family: "Arapey", serif;
+    font-size: 1.5em;
+    color: #1b1b1b;
+}
