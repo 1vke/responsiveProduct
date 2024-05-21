@@ -22,6 +22,8 @@ span.text {
     resize: both;
 }
 
+.image-carousel-wrapper { position: relative; }
+
 .image-carousel {
     display: flex;
     overflow: scroll;
@@ -49,6 +51,70 @@ span.text {
     object-fit: cover;
 }
 
+.image-carousel-ui {
+    display: grid;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 11fr 1fr;
+    pointer-events: none;
+}
+
+.image-carousel-ui > * {
+    z-index: 1;
+}
+
+.image-carousel-ui .arrow {
+    width: 2em;
+    height: 2em;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.image-carousel-ui .arrow img {
+    scale: .8;
+    width: 100%;
+    height: 100%;
+    opacity: 25%;
+    transition: opacity ease .2s;
+    user-select: none;
+}
+.image-carousel-ui .arrow img:hover { opacity: 100%; }
+
+.image-carousel-ui .arrow.left {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.image-carousel-ui .arrow.right {
+    grid-area: 1 / 3 / 3 / 4;
+    transform: rotateY(180deg);
+}
+
+.image-carousel-ui .pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.image-carousel-ui .pagination-dots .dot {
+    width: .75em;
+    height: .75em;
+    background-color: #807f7f;
+    border-radius: 100%;
+    cursor: pointer;
+    pointer-events: all;
+    user-select: none;
+    opacity: 25%;
+    transition: opacity ease .15s;
+}
+.image-carousel-ui .pagination-dots .dot:hover { opacity: 100%; }
+
 .product-details {
     display: flex;
     justify-content: flex-end;
@@ -63,14 +129,19 @@ span.text {
     font-size: 2.15rem;
     color: #1b1b1b;
 }
+.details .subtitle {
+    font-family: "Arapey", serif;
+    font-size: 1.25rem;
+    color: #343434;
+}
 .details .price {
     font-family: "Arapey", serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #1b1b1b;
 }
 
 .variant-selection {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .option-selection {
@@ -79,8 +150,9 @@ span.text {
 
 .option-selection .header {
     font-family: "Arapey", serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-bottom: .35em;
+    font-weight: bold;
 }
 
 .option-selection .option-container {
@@ -104,10 +176,13 @@ span.text {
 
 .option-value .option-value-label .option-value-name {
     display: block;
-    padding: 0.75rem 1rem;
+    padding: 0.75em 1em;
     cursor: pointer;
     border: 1px solid rgba(64, 64, 64, 0.4);
     border-radius: 8px;
+    font-family: 'Helvetica';
+    font-size: 1rem;
+    transition: border-color ease .2s;
 }
 
 .option-value .option-value-label input[type=radio]:checked + .option-value-name {
@@ -116,9 +191,10 @@ span.text {
 
 .product-details .btn {
     padding: .85em .85em;
-    border-radius: 2rem;
+    border-radius: 2em;
     background-color: white;
     transition: border-color 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out, box-shadow 0.2s ease-out; 
+    cursor: pointer;
 }
 
 .product-details .btn:hover {
