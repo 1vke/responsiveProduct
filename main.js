@@ -44,33 +44,8 @@ rightArrow.onclick = () => {
 
 carousel.onscroll = () => {
     Array.prototype.slice.call(paginationDotsWrapper.children).map((dotDiv, index) => {
-        const opacity = Math.max((100 - Math.abs(carousel.scrollLeft - (carousel.clientWidth * index)) * .25), 25)
-        dotDiv.style.opacity = `${opacity}%`;
+        const opacity = Math.max((100 - Math.abs(carousel.scrollLeft - (carousel.clientWidth * index)) * .25), 25);
+        dotDiv.style.opacity = `${opacity.toFixed(2)}%`;
     });
 };
-carousel.scrollTo({
-    left: 20,
-    behavior: 'smooth',
-});
-
-// const isCenter = (child, parent) => {
-//     const innerRect = child.getBoundingClientRect();
-//     const outerRect = parent.getBoundingClientRect();
-
-//     const innerCenterX = innerRect.left + innerRect.width / 2;
-//     const outerCenterX = outerRect.left + outerRect.width / 2;
-
-//     return Math.abs(outerCenterX - innerCenterX) < 1;
-// }
-
-// const staffIconOnclick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, staffDetails: Staff) => {
-//     setActiveStaff(staffDetails);
-
-//     // check if icon that was clicked is not centered, scroll to it when it isn't
-//     if (event.currentTarget.parentElement && !isCenter(event.currentTarget, event.currentTarget.parentElement)) {
-//         event.currentTarget.parentElement.scrollTo({
-//             left: event.currentTarget.offsetLeft - event.currentTarget.clientWidth ,
-//             behavior: 'smooth',
-//         });
-//     }
-// }
+carousel.onscroll();
